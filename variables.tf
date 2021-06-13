@@ -61,3 +61,8 @@ variable "user_data" {
   type    = string
   default = null
 }
+
+variable "enable_eip" {
+  type    = bool
+  default = false
+}
