@@ -17,4 +17,8 @@ resource "aws_instance" "instance" {
       ami
     ]
   }
+
+  depends_on = [
+    aws_security_group.sg
+  ]
 }
