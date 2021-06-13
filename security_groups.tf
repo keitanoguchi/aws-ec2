@@ -1,10 +1,12 @@
 resource "aws_security_group" "sg" {
   vpc_id = var.vpc_id
-  name   = "sg-${var.sg_name}"
 
-  tags = {
-    Name = var.sg_name
-  }
+  tags = merge(
+    {
+      Name = var.sg_name
+    },
+    var.tags
+  )
 }
 
 resource "aws_security_group_rule" "in_ssh" {
